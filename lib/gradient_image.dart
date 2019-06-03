@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 class GradientImage extends StatelessWidget {
   GradientImage(
       {@required this.image,
-      @required this.height,
-      this.width,
-      this.gradient,
+      this.height = double.infinity,
+      this.width = double.infinity,
+      this.gradient = false,
       this.startColor,
       this.endColor});
 
@@ -23,7 +23,7 @@ class GradientImage extends StatelessWidget {
     return Stack(children: <Widget>[
       Container(
           height: height,
-          width: double.infinity,
+          width: width,
           child: DecoratedBox(
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -35,8 +35,8 @@ class GradientImage extends StatelessWidget {
           )),
       Container(
         height: height,
+        width: width,
         decoration: BoxDecoration(
-            color: Colors.white,
             gradient: LinearGradient(
                 begin: FractionalOffset.topCenter,
                 end: FractionalOffset.bottomCenter,
