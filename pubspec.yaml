@@ -2,7 +2,7 @@ name: gradient_image
 description: A new Flutter package project.
 version: 0.0.1
 author: Shun Kakinoki <shunkakinoki@gmail.com>
-# homepage:
+homepage: https://github.com/shunkakinoki/gradient_image
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
