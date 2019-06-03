@@ -8,8 +8,9 @@ class GradientImage extends StatelessWidget {
       this.height = double.infinity,
       this.width = double.infinity,
       this.gradient = false,
-      this.startColor,
-      this.endColor});
+      this.startColor = Colors.transparent,
+      this.endColor = Colors.transparent,
+      this.fit = BoxFit.cover});
 
   final ImageProvider image;
   final double height;
@@ -17,6 +18,7 @@ class GradientImage extends StatelessWidget {
   final bool gradient;
   final Color startColor;
   final Color endColor;
+  final BoxFit fit;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class GradientImage extends StatelessWidget {
           child: DecoratedBox(
             decoration: BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.cover,
+                fit: fit,
                 image: image,
               ),
               // ...
@@ -41,13 +43,13 @@ class GradientImage extends StatelessWidget {
                 begin: FractionalOffset.topCenter,
                 end: FractionalOffset.bottomCenter,
                 colors: [
-                  startColor,
-                  endColor,
-                ],
+              startColor,
+              endColor,
+            ],
                 stops: [
-                  0.0,
-                  1.0
-                ])),
+              0.0,
+              1.0
+            ])),
       )
     ]);
   }
